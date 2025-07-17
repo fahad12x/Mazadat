@@ -1,0 +1,9 @@
+.confirm-popup {
+  direction: rtl;
+  max-width: 320px;
+  margin: auto;
+}
+
+.confirm-popup .form-check-input {
+  float: right;
+}

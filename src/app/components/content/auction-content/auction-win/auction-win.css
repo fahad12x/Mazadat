@@ -1,0 +1,20 @@
+.auction-win-container {
+  direction: rtl;
+  background: #fff;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.auction-win-container i {
+  vertical-align: middle;
+}
+
+.bg-success.bg-opacity-10 {
+  background-color: #e6f4ea !important; 
+}
+
+.btn-success {
+  border-radius: 8px;
+}

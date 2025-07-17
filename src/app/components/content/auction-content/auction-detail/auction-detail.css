@@ -1,0 +1,118 @@
+.auction-detail {
+  direction: rtl;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #fff;
+  color: #333;
+}
+
+.timer-bar {
+  background: #e8f5e9;
+  color: #388e3c;
+  padding: 12px;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.timer-bar.ended {
+  background: #fddede;
+  color: #d32f2f;
+}
+
+.step-box {
+  background: #f8f9fa;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.step-number {
+  font-size: 1.4rem;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.step-icon {
+  font-size: 2rem;
+  color: #007bff;
+  margin-top: 5px;
+}
+
+.step-title {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.info-box {
+  background: #f8f9fa;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.report-box {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  background: #6c757d;
+  color: white;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.report-desc {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1050;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 350px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.custom-condition td {
+  border: 1px solid #dee2e6;
+  padding: 10px;
+}
+
+.report-box:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.counter-box {
+  text-align: center;
+}
+
+.bid-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bid-number .currency {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 5px;
+}

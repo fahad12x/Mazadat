@@ -1,0 +1,48 @@
+.topnav {
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  direction: rtl;
+}
+
+.topnav-content {
+  display: flex;
+  align-items: center;
+}
+
+.notification-btn {
+  position: relative;
+  margin-left: 20px;
+  font-size: 1.5rem;
+  color: #495057;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: #dc3545;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.lang {
+  margin-left: 20px;
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #212529;
+}
+
+.user-info i {
+  font-size: 1.5rem;
+  margin-left: 8px;
+}

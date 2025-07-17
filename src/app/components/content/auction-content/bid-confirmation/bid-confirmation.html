@@ -1,0 +1,25 @@
+<div class="card shadow-sm text-center p-3 confirm-popup">
+
+  <div class="mb-3 text-success fs-1">
+    <i class="bi bi-check-circle-fill"></i>
+  </div>
+
+  <h4 class="fw-bold mb-2">تأكيد المزايدة</h4>
+  <p class="mb-3 text-muted">هل أنت متأكد من المزايدة على هذه السيارة؟</p>
+
+  <div class="bg-light py-2 px-3 rounded mb-3 fw-bold">
+    قيمة المزايدة: {{amount}} ريال
+  </div>
+
+  <button (click)="confirm.emit()" class="btn btn-success w-100 mb-2">تأكيد المزايدة</button>
+
+  <button (click)="cancel.emit()" class="btn btn-danger w-100 mb-2">إلغاء</button>
+
+  <div class="form-check mt-2 text-end">
+    <input class="form-check-input ms-2" type="checkbox" (change)="toggleHideMessage()" id="noShow">
+    <label class="form-check-label small text-muted" for="noShow">
+      عدم اظهار هذه الرسالة مرة اخرى
+    </label>
+  </div>
+
+</div>
