@@ -1,16 +1,21 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
-@import "bootstrap-icons/font/bootstrap-icons.css";
-
 .layout {
   display: flex;
   direction: rtl;
+}
+
+.sidebar-container {
+  width: 25vh;
+  height: 100vh;
+  background: #f9f9f9;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
 }
 
 .main-content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  padding-top: 70px;
 }
 
 .content {
@@ -18,4 +23,31 @@
   padding: 20px;
   background: #f4f6f9;
   overflow-y: auto;
+}
+
+@media (max-width: 853px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar-container {
+    display: none; 
+  }
+
+  .sidebar-container.active {
+    display: block;                
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;                  
+    height: 100vh;
+    background: #f9f9f9;
+    z-index: 1050;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .main-content {
+    width: 100%;
+  }
 }

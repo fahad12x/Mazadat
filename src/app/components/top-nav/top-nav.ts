@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-top-nav',
-  imports: [],
+  standalone: true,
   templateUrl: './top-nav.html',
-  styleUrl: './top-nav.css'
+  styleUrls: ['./top-nav.css']
 })
 export class TopNav {
+  @Output() burgerClicked = new EventEmitter<void>();
 
+  emitBurgerClick() {
+    this.burgerClicked.emit();
+  }
 }

@@ -1,18 +1,49 @@
 .topnav {
   width: 100%;
-  position: relative;
-  z-index: 1000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1100;
   direction: rtl;
+  background-color: #fff;
 }
 
 .topnav-content {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: 16px; 
+}
+
+.burger-btn {
+  background: #323232;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (min-width: 853px) {
+  .burger-btn {
+    display: none;
+  }
 }
 
 .notification-btn {
   position: relative;
-  margin-left: 20px;
   font-size: 1.5rem;
   color: #495057;
 }
@@ -30,7 +61,6 @@
 }
 
 .lang {
-  margin-left: 20px;
   font-size: 1rem;
   color: #6c757d;
 }
@@ -44,5 +74,5 @@
 
 .user-info i {
   font-size: 1.5rem;
-  margin-left: 8px;
+  margin-left: 6px;
 }

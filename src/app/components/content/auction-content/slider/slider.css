@@ -4,7 +4,7 @@
   height: 300px;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .slider-image {
@@ -22,18 +22,6 @@
   gap: 15px;
 }
 
-.top-icons i {
-  font-size: 1.8rem;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.3s, color 0.3s;
-}
-
-.top-icons i:hover {
-  color: #ff4d4d;
-  transform: scale(1.1);
-}
-
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -48,7 +36,6 @@
 
 .nav-btn:hover {
   color: #ffcc00;
-  
 }
 
 .nav-btn.left {
@@ -65,6 +52,7 @@
   left: 15px;
 }
 
+.top-icons i,
 .bottom-icons i {
   font-size: 1.8rem;
   color: white;
@@ -72,7 +60,27 @@
   transition: transform 0.3s, color 0.3s;
 }
 
-.bottom-icons i:hover {
-  color: #00c853; 
+.top-icons i:hover {
+  color: #ff4d4d;
   transform: scale(1.1);
+}
+
+.bottom-icons i:hover {
+  color: #00c853;
+  transform: scale(1.1);
+}
+
+@media (max-width: 853px) {
+  .slider-container {
+    height: 220px;
+  }
+
+  .top-icons,
+  .bottom-icons {
+    gap: 10px;
+  }
+
+  .nav-btn {
+    font-size: 1.5rem;
+  }
 }

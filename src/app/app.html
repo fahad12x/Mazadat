@@ -1,14 +1,15 @@
+<app-top-nav (burgerClicked)="toggleSidebar()"></app-top-nav>
 
 <div class="layout">
-  <app-sidebar></app-sidebar>
+  <div [ngClass]="{ 'sidebar-container': true, 'active': isSidebarVisible }">
+    <app-sidebar></app-sidebar>
+  </div>
 
   <div class="main-content">
-    <app-top-nav></app-top-nav>
-
     <div class="content">
       <router-outlet></router-outlet>
     </div>
-
     <app-bottom-nav></app-bottom-nav>
+    
   </div>
 </div>

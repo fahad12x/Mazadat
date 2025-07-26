@@ -1,9 +1,9 @@
 .auction-detail {
   direction: rtl;
-  font-family: Arial, sans-serif;
-  padding: 20px;
   background: #fff;
-  color: #333;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .timer-bar {
@@ -14,7 +14,6 @@
   font-size: 1.3rem;
   font-weight: bold;
   border-radius: 8px;
-  width: 100%;
   margin-bottom: 15px;
 }
 
@@ -28,6 +27,7 @@
   text-align: center;
   padding: 10px;
   border-radius: 8px;
+  height: 100%;
 }
 
 .step-number {
@@ -61,6 +61,10 @@
   border-radius: 8px;
 }
 
+.report-box:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 .report-header {
   display: flex;
   justify-content: space-between;
@@ -76,31 +80,11 @@
   margin-top: 10px;
 }
 
-.modal-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: flex; justify-content: center; align-items: center;
-  z-index: 1050;
-}
-
-.modal-content {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  width: 350px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
 .custom-condition td {
   border: 1px solid #dee2e6;
   padding: 10px;
 }
 
-.report-box:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
 .counter-box {
   text-align: center;
 }
@@ -115,4 +99,32 @@
   font-size: 0.8rem;
   color: #666;
   margin-top: 5px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1050;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Responsive Tweak */
+@media (max-width: 853px) {
+  .step-box, .info-box, .report-box {
+    font-size: 0.85rem;
+  }
+  .auction-detail {
+    padding: 16px;
+  }
 }

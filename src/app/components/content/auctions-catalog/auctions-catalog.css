@@ -21,9 +21,9 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: white;
   font-size: 1.5rem;
   font-weight: bold;
+  color: white;
 }
 
 .hero-overlay.right {
@@ -32,50 +32,51 @@
 
 .hero-overlay.left {
   left: 20px;
-  background: white;       
-  color: #000000;          
-  border: 2px solid #ffffff;
-  padding: 10px 24px;       
+  background: white;
+  color: black;
+  border: 2px solid white;
+  padding: 10px 24px;
   border-radius: 8px;
-  cursor: pointer;
   font-size: 1.1rem;
+  cursor: pointer;
   transition: background 0.3s, color 0.3s;
 }
 
 .hero-overlay.left:hover {
-  background: #007bff;      
+  background: #007bff;
   color: white;
 }
 
-
 .brands {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 20px;
+  gap: 10px;
 }
 
 .brand-item {
-  width: 15%;
+  flex: 1 0 30%;
   text-align: center;
 }
 
 .brand-item img {
   width: 100%;
+  max-width: 80px;
   border-radius: 8px;
 }
 
 .brand-name {
   margin-top: 5px;
   font-size: 0.9rem;
-  margin-right: 6px;
 }
 
 .filter-buttons {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   margin: 15px 0;
-  margin-inline-start: auto;
 }
 
 .filter-buttons button {
@@ -95,18 +96,18 @@
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 15px;
   margin-top: 20px;
 }
 
 .product-card {
-  position: relative;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   overflow: hidden;
   padding-bottom: 10px;
+  position: relative;
 }
 
 .timer {
@@ -136,6 +137,7 @@
 .brand-details {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .brand-logo {
@@ -144,14 +146,9 @@
   border-radius: 50%;
 }
 
-.brand-details .brand-name {
-  font-weight: bold;
-}
-
 .product-type {
   font-size: 0.8rem;
   color: #666;
-  margin-right: 6px;
 }
 
 .heart-btn {
@@ -176,25 +173,16 @@
   margin-top: 20px;
 }
 
-.pagination .page {
+.pagination .page-link {
   padding: 5px 10px;
-  border: 1px solid #ccc;
   border-radius: 6px;
-  cursor: pointer;
-}
-
-.pagination span {
   font-size: 1rem;
-  cursor: pointer;
 }
 
-.image-link {
-  display: block;
-}
+@media (max-width: 853px) {
+  
 
-.image-link img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 0;
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }

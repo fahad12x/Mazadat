@@ -1,11 +1,10 @@
-<div class="auction-detail">
-
-  <div class="d-flex justify-content-between align-items-center mb-3">
+<div class="auction-detail container">
+  <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
     <div>
       <h2 class="mb-0">اسم المزاد</h2>
       <p class="mb-0 text-muted">عنوان المزاد</p>
     </div>
-    <div class="text-end">
+    <div class="text-end mt-2 mt-md-0">
       <i class="bi bi-car-front-fill text-primary me-1"></i> اسم السيارة
     </div>
   </div>
@@ -20,8 +19,8 @@
 
   <div class="alert alert-secondary text-center mt-3">عرض آخر</div>
 
-  <div class="d-flex justify-content-between bg-light p-3 rounded mb-3">
-    <div><i class="bi bi-people-fill me-2 text-primary"></i>المشاركين <span class="fw-bold ms-2">28</span></div>
+  <div class="d-flex justify-content-between bg-light p-3 rounded mb-3 flex-wrap">
+    <div><i class="bi bi-people-fill me-2 text-primary"></i> المشاركين <span class="fw-bold ms-2">28</span></div>
     <div><i class="bi bi-person-fill text-primary"></i> <i class="bi bi-person-fill text-primary"></i> <i class="bi bi-person-fill text-primary"></i> +5</div>
   </div>
 
@@ -41,152 +40,47 @@
   </div>
 
   <div class="d-flex justify-content-between align-items-center bg-light p-3 rounded mb-3 counter-box">
-  
-  <button (click)="decrement()" class="btn btn-primary btn-sm">-</button>
-
-  <div class="bid-number">
-    <div class="fw-bold fs-4">{{currentBid}}</div>
-    <div class="currency">الريال السعودي</div>
+    <button (click)="decrement()" class="btn btn-primary btn-sm">-</button>
+    <div class="bid-number">
+      <div class="fw-bold fs-4">{{currentBid}}</div>
+      <div class="currency">الريال السعودي</div>
+    </div>
+    <button (click)="increment()" class="btn btn-primary btn-sm">+</button>
   </div>
-
-  <button (click)="increment()" class="btn btn-primary btn-sm">+</button>
-
-</div>
-
 
   <button (click)="openConfirm()" class="btn btn-success w-100 mb-4">مزايدة</button>
 
   <h4>خطوات المزايدة</h4>
   <div class="row g-2 mb-4">
-
-    <div class="col-4">
+    <div class="col-6 col-md-4 col-lg-2" *ngFor="let step of steps">
       <div class="step-box">
-        <div class="step-number">1</div>
-        <i class="bi bi-key-fill step-icon"></i>
-        <div class="step-title">التسجيل</div>
+        <div class="step-number">{{step.number}}</div>
+        <i class="bi {{step.icon}} step-icon"></i>
+        <div class="step-title">{{step.title}}</div>
       </div>
     </div>
-
-    <div class="col-4">
-      <div class="step-box">
-        <div class="step-number">2</div>
-        <i class="bi bi-credit-card step-icon"></i>
-        <div class="step-title">الدفع</div>
-      </div>
-    </div>
-
-    <div class="col-4">
-      <div class="step-box">
-        <div class="step-number">3</div>
-        <i class="bi bi-megaphone-fill step-icon"></i>
-        <div class="step-title">المزايدة</div>
-      </div>
-    </div>
-
-    <div class="col-4">
-      <div class="step-box">
-        <div class="step-number">4</div>
-        <i class="bi bi-trophy-fill step-icon"></i>
-        <div class="step-title">الفوز</div>
-      </div>
-    </div>
-
-    <div class="col-4">
-      <div class="step-box">
-        <div class="step-number">5</div>
-        <i class="bi bi-file-earmark-text step-icon"></i>
-        <div class="step-title">التوثيق</div>
-      </div>
-    </div>
-
-    <div class="col-4">
-      <div class="step-box">
-        <div class="step-number">6</div>
-        <i class="bi bi-car-front-fill step-icon"></i>
-        <div class="step-title">الاستلام</div>
-      </div>
-    </div>
-
   </div>
 
   <h4>بيانات المركبة</h4>
   <div class="row g-2 mb-4">
-
-    <div class="col-4">
-      <div class="info-box"><i class="bi bi-calendar-check"></i> الموديل 2024</div>
+    <div class="col-6 col-md-4" *ngFor="let info of carInfo">
+      <div class="info-box">
+        <i class="bi {{info.icon}}"></i> {{info.label}}
+      </div>
     </div>
-
-    <div class="col-4">
-      <div class="info-box"><i class="bi bi-gear-fill"></i> ناقل حركة أوتوماتيك</div>
-    </div>
-
-    <div class="col-4">
-      <div class="info-box"><i class="bi bi-fuel-pump-fill"></i> بنزين</div>
-    </div>
-
-    <div class="col-4">
-      <div class="info-box"><i class="bi bi-palette-fill"></i> لون أبيض</div>
-    </div>
-
-    <div class="col-4">
-      <div class="info-box"><i class="bi bi-person-vcard"></i> مالك واحد</div>
-    </div>
-
-    <div class="col-4">
-      <div class="info-box"><i class="bi bi-geo-alt-fill"></i> الرياض</div>
-    </div>
-
   </div>
-
-  <h4>تفاصيل حالة المركبة</h4>
-  <table class="table table-borderless text-center custom-condition">
-    <tbody>
-      <tr>
-        <td>هل تم صيانة السيارة؟ <br><span class="fw-bold">نعم</span></td>
-        <td>الحالة الخارجية <br><span class="fw-bold">جيدة جداً</span></td>
-        <td>المسافة المقطوعة <br><span class="fw-bold">25000 كم</span></td>
-      </tr>
-      <tr>
-        <td>التصادمات <br><span class="fw-bold">بدون حوادث</span></td>
-        <td>المفاتيح <br><span class="fw-bold">مفتاحين</span></td>
-        <td>الإطارات <br><span class="fw-bold">حالة ممتازة</span></td>
-      </tr>
-    </tbody>
-  </table>
 
   <h4>التقارير</h4>
   <div class="row g-2 mb-3">
-
-    <div class="col-4">
+    <div class="col-md-4" *ngFor="let report of reports">
       <div class="report-box">
         <div class="report-header">
-          <span>عنوان</span>
+          <span>{{report.title}}</span>
           <span>تقرير</span>
         </div>
-        <div class="report-desc">تقرير فحص السيارة الكامل</div>
+        <div class="report-desc">{{report.desc}}</div>
       </div>
     </div>
-
-    <div class="col-4">
-      <div class="report-box">
-        <div class="report-header">
-          <span>عنوان</span>
-          <span>تقرير</span>
-        </div>
-        <div class="report-desc">تقرير حالة المحرك</div>
-      </div>
-    </div>
-
-    <div class="col-4">
-      <div class="report-box">
-        <div class="report-header">
-          <span>عنوان</span>
-          <span>تقرير</span>
-        </div>
-        <div class="report-desc">تقرير فحص الهيكل</div>
-      </div>
-    </div>
-
   </div>
 
   <div class="d-flex justify-content-between fw-bold mb-3">
@@ -196,15 +90,14 @@
 
   <button class="btn btn-dark w-100">احصل على التقرير</button>
 
-</div>
-
-<div class="modal-overlay" *ngIf="showConfirm">
-  <div class="modal-content">
-    <app-bid-confirmation
-      [amount]="currentBid"
-      (confirm)="placeBid()"
-      (cancel)="closeConfirm()"
-      (dontShowAgain)="disablePopup()">
-    </app-bid-confirmation>
+  <div class="modal-overlay" *ngIf="showConfirm">
+    <div class="modal-content">
+      <app-bid-confirmation
+        [amount]="currentBid"
+        (confirm)="placeBid()"
+        (cancel)="closeConfirm()"
+        (dontShowAgain)="disablePopup()">
+      </app-bid-confirmation>
+    </div>
   </div>
 </div>
